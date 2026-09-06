@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Misfits Aux and campaign-pack load guide."><title>What to load · Misfits Aux</title><link rel="stylesheet" href="assets/site.css"></head>
+<body>
+<header><nav class="nav" aria-label="Main navigation"><a class="brand" href="index.html">MISFITS AUX</a><div class="links"><a href="index.html">Home</a><a href="medical.html">Medical</a><a href="systems.html">Systems</a><a aria-current="page" href="packages.html">What to load</a></div></nav></header>
+<main>
+  <section class="hero"><div class="eyebrow">Modset guide</div><h1>One universal mod, optional campaign packs.</h1><p class="lede">The old campaign-fixes bundles mixed permanent features with era-specific content. They are now separated.</p></section>
+  <table><thead><tr><th>Mission type</th><th>Load</th><th>Provides</th></tr></thead><tbody>
+    <tr><td>Normal / modern</td><td><strong>Misfits Aux</strong></td><td>All universal QOL, medical, objects, insignia, and supported compatibility components.</td></tr>
+    <tr><td>Misfits 2041</td><td><strong>Misfits Aux + Misfits 2041</strong></td><td>JCA/MCRP vests, Red Sigil gear, synths, campaign items/props, sensor HUD, menu, and optional Aegis flare patch.</td></tr>
+    <tr><td>Misfits WWII</td><td><strong>Misfits Aux + Misfits WWII</strong></td><td>Period scenery/props, WWII menu, BC-611 range patch, and IJA identity fix.</td></tr>
+  </tbody></table>
+  <h2>Things you no longer load from the old bundles</h2>
+  <p>The campaign packs do not contain duplicate copies of CHVD, Backpack on Chest, ACE BFT customisation, Prone Launcher, Ladder Tweak, Multiplayer Scaler, Third-person Camera, Survivable Wrecks, radio-backpack additions, or other universal Aux systems.</p>
+  <h2>External mods remain external</h2>
+  <p>LAMBS, SER effects packages, KAT, Immersive Cigs, TFAR, ACE, terrain dependencies, faction mods, and DLC/content mods are still separate dependencies where a mission needs them. A compatibility PBO does not redistribute the mod it patches.</p>
+  <p class="notice"><strong>For current testing:</strong> disable the old <code>@Jamio_2041_Fixes</code> or <code>@Jamio_WW2_Fixes</code> bundle when testing its replacement. Loading both can duplicate class patches and hide migration problems.</p>
+  <h2>Quick fault finding</h2>
+  <ul><li>Universal feature missing? Check Misfits Aux.</li><li>2041 gear or presentation missing? Check Misfits 2041 and its campaign dependencies.</li><li>WWII prop or radio tweak missing? Check Misfits WWII and its campaign dependencies.</li><li>Only one optional compatibility feature missing? Confirm the third-party mod it patches is loaded.</li></ul>
+</main>
+<footer>Misfits Aux · Package and modset reference</footer>
+</body>
+</html>
