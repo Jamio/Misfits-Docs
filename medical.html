@@ -44,7 +44,7 @@
        <strong style="color:#ffb10a;" >Lost a lot of blood</strong> = Lost 15-30% blood volume / 750 - 1500mL</li><li>
          <strong style="color:#ff850a;" >Lost a large amount of blood</strong> = Lost 30-40% blood volume / 1500 - 2000mL</li><li>
            <strong style="color:#ff330a;" >Lost a fatal amount of blood</strong> = Lost >40% blood volume / >2000mL</li><li>
-      </li></ol>
+      </li><ol>
 <article class="card"><h3>Heart Rate</h3><p>A normal in-game range for heart rate is ~60-80bpm. Extreme low or high values will render players unconscious.</p></article>
         <article class="card"><h3>Blood Pressure</h3><p>A product of blood volume and heart rate. Stable values are ~120/80.</p></article>
         
@@ -53,47 +53,52 @@
     <h3>Stable does not mean awake</h3><p>Once the dangerous problems are corrected, ACE periodically checks whether an unconscious patient can wake. Epinephrine increases the opportunity for those checks, but is not a flat guarantee that someone can become conscious again.</p>
   </section>
 
-  <section id="items"><h2>Core ACE medical items</h2><div class="table-wrap"><table><thead><tr><th>Item</th><th>What it does</th><th>Remember</th></tr></thead><tbody>
-    <tr><td>Bandage</td><td>Closes an open wound and stops that wound bleeding.</td><td>Bandaged wounds can reopen until stitched in our advanced setup.</td></tr>
-    <tr><td>Tourniquet (CAT)</td><td>Immediately stops bleeding from every wound on an arm or leg.</td><td>Temporary only. It causes pain and blocks medication/IV flow through that limb.</td></tr>
-    <tr><td>Splint</td><td>Treats a fractured limb and restores mobility according to mission settings.</td><td>Control bleeding before worrying about fractures.</td></tr>
-    <tr><td>Morphine</td><td>Strong pain relief that lowers heart rate and blood pressure.</td><td>Repeated doses can dangerously suppress circulation. Check the treatment log.</td></tr>
-    <tr><td>Painkillers</td><td>Gentler pain management without using a morphine injector.</td><td>Useful for less severe pain; do not expect an instant full reset.</td></tr>
+  <section id="items"><h2>Core ACE Medical Items</h2><div class="table-wrap"><table><thead><tr><th>Item</th><th>What it does</th><th>Remember</th></tr></thead><tbody>
+    <tr><td>Bandage</td><td>Closes an open wound and stops that wound bleeding.</td><td>In our setup, bandages have different efficiencies and wounds can reopen unless stitched by a medic.</td></tr>
+    <tr><td>Tourniquet (CAT)</td><td>Immediately stops bleeding from every wound on an arm or leg.</td><td>Temporary only. It causes ever-increasing pain after ~5 minutes and blocks medication/IV flow through that limb.</td></tr>
+    <tr><td>Splint</td><td>Treats a fractured limb and restores mobility.</td><td>Control bleeding before worrying about fractures.</td></tr>
+    <tr><td>Morphine</td><td>Strong pain relief that lowers heart rate and blood pressure.</td><td>Repeated doses can dangerously suppress heart rate and knock out a patient unintentionally. Check the treatment log.</td></tr>
+    <tr><td>Painkillers</td><td>Gentler pain management without using a morphine injector.</td><td>Useful for less severe pain but can take a minute to come into effect.</td></tr>
     <tr><td>Epinephrine</td><td>Raises heart rate and improves an eligible unconscious patient's wake-up chances.</td><td>It does not replace blood, close wounds or guarantee consciousness.</td></tr>
-    <tr><td>Adenosine</td><td>Lowers an excessively high heart rate under advanced medication.</td><td>A specialist corrective drug, not routine casualty treatment.</td></tr>
-    <tr><td>Blood, plasma and saline IVs</td><td>Replace lost circulating volume over time.</td><td>Medic-restricted in our normal setup. Larger bags are not instant.</td></tr>
-    <tr><td>Surgical Kit / Suture</td><td>Closes bandaged wounds so they can no longer reopen.</td><td>All eligible wounds must be stitched before our PAK becomes available.</td></tr>
-    <tr><td>Personal Aid Kit (PAK)</td><td>Provides definitive full treatment when its requirements are satisfied.</td><td>Not a shortcut: stabilise, bandage, stitch and splint first.</td></tr>
+    <tr><td>Adenosine</td><td>Lowers an excessively high heart rate under advanced medication.</td><td>Not used for routine treatment.</td></tr>
+    <tr><td>Blood, Plasma and Saline IVs</td><td>Replace lost blood volume over time.</td><td>These are restricted to medics-only in our settings.</td></tr>
+    <tr><td>Surgical Kit / Suture</td><td>Closes bandaged wounds so they can no longer reopen.</td><td>Stitching requires sutures as well as the kit, and sutures are consumed for each wound stitched.</td></tr>
+    <tr><td>Personal Aid Kit (PAK)</td><td>Provides full treatment of a patient</td><td>Takes a long time, and can only be used in medical vehicles/facilities as per our settings.</td></tr>
   </tbody></table></div></section>
 
-  <section id="advanced-care"><h2>Advanced treatment</h2>
-    <figure class="guide-figure"><img src="assets/guides/ace-bandage-tab.png" alt="ACE bandage and fracture tab with a tourniquet applied"><figcaption>A tourniquet controls limb bleeding immediately, but the underlying wound still needs treatment.</figcaption></figure>
-    <h3>Bandage, then stitch</h3><p>Bandaging turns an open wound into a closed but potentially temporary repair. A medic must use the surgical treatment on bandaged wounds to make that repair permanent. Bruises do not need stitching and do not block the PAK.</p>
-    <div class="figure-grid"><figure class="guide-figure"><img src="assets/guides/ace-splint-treatment.png" alt="ACE medical menu after applying a splint"><figcaption>The fracture has been splinted, but the wound and tourniquet still require attention.</figcaption></figure><figure class="guide-figure"><img src="assets/guides/ace-bandage-treatment.png" alt="ACE medical menu after bandaging a wound"><figcaption>The wound is bandaged. In the current Misfits setup it must still be stitched before PAK treatment.</figcaption></figure></div>
-    <h3>CPR</h3><p>Use CPR on a patient in cardiac arrest. CPR is not useful simply because somebody is unconscious. Keep the airway clear, stop blood loss, replace volume where required, and use the diagnostic information rather than administering random medication.</p>
-    <h3>Our PAK rule</h3><p>The PAK action remains hidden until the patient meets the configured requirements. In the full workflow this means no open bandageable wounds, all bandaged wounds stitched, required fractures treated, and the patient sufficiently stable. If the action is absent, something remains unresolved.</p>
-    <h3>Moving casualties</h3><p>Dragging starts quickly but is slow. Carrying takes longer to begin but moves faster. The Misfits stretcher can transport a casualty and acts as a medical treatment location when the relevant settings permit it.</p>
+  <section id="advanced-care"><h2>Advanced Treatment</h2>
+    <h3>Bandage, then Stitch</h3><p>Bandaging turns an open wound into a closed but potentially temporary repair. A medic must use the Surgical Kit on bandaged wounds to make that repair permanent. Bruises do not need stitching and do not block the PAK.</p>
+    <h3>CPR</h3><p>Use CPR on a patient in cardiac arrest. CPR is the primary way to restore a patients heart rate provided that their blood volume will allow it. Keep the airway clear, stop blood loss, replace volume where required, and then begin CPR. If someone nearby is able to assist with CPR while you work on more important things, this is ideal.</p>
+    <h3>Our PAK rule</h3><p>The PAK action remains hidden until the patient is considered "stable". For our settings this means no open wounds, all wounds bandaged, fractures treated, heart rate normal, blood pressure normal, blood volume <85% (Only lost some blood), no fractures, conscious. If the PAK action is absent, it is likely that something else needs resolving first.</p>
+    <h3>Moving casualties</h3><p>Dragging starts quickly but is slow. Carrying takes longer to begin but moves faster. The Misfits stretcher can transport a casualty and acts as a medical vehicle/facility.</p>
   </section>
 
-  <section id="airway"><h2>Airway, breathing and SpO₂</h2><p>Misfits Medical provides a compact KAT-style respiratory loop without oxygen tanks, pneumothorax, chest drains or a full respiratory simulation.</p>
-    <ol class="steps"><li><strong>Check Airway.</strong> Establish whether the airway is clear or obstructed.</li><li><strong>Clear or maintain it.</strong> Extend/turn the head, use the recovery position, or insert an Airway Tube.</li><li><strong>Check Breathing.</strong> The result is breathing normally, shallow breathing, or not breathing.</li><li><strong>Use Pulse Oximeter.</strong> Read the patient's SpO₂ when an exact value matters.</li><li><strong>Treat circulation.</strong> A clear airway cannot make a pulseless patient breathe; CPR and normal ACE stabilisation are still required.</li></ol>
-    <div class="grid two"><article class="card"><h3>Manual manoeuvres</h3><p><strong>Head extension or turning</strong> is fast, free and temporary. <strong>Recovery position</strong> is a more sustained hands-free measure for an unconscious patient who is breathing and can safely be left positioned. Movement or deterioration may require reassessment.</p></article><article class="card"><h3>Airway Tube</h3><p>The reliable item-based method of clearing and maintaining the airway. It replaces several overlapping KAT devices with one easy-to-understand treatment.</p></article></div>
-    <p>Prolonged failure to breathe lowers SpO₂. Severe hypoxia prevents consciousness even when other ACE vitals look acceptable. An airway can be clear while the patient is not breathing if circulation or their wider medical state cannot sustain respiration.</p>
+  <section id="airway"><h2>Airway, breathing and SpO₂</h2><p>Misfits Medical provides a compact KAT-style respiratory system, but without the hassle of oxygen tanks, pneumothorax, chest drains or a full respiratory simulation.</p>
+    <ol class="steps"><li><strong>Check Airway.</strong> Establish whether the airway is clear or obstructed.</li><li><strong>Clear or maintain it.</strong> Extend/turn the head, use the recovery position, or insert an Airway Tube.</li><li><strong>Check Breathing.</strong> The result is breathing normally, shallow breathing, or not breathing.</li><li><strong>Use Pulse Oximeter.</strong> The real value behind breathing functionality is the amount of heamoglobin in the patients blood carrying oxygen - otherwise known as SpO2. SpO2 should be</li><li><strong>Treat circulation.</strong> A clear airway cannot make a pulseless patient breathe; CPR and normal ACE stabilisation are still required.</li></ol>
+    <div class="grid two">
+      <article class="card"><h3>SpO2</h3><p> The underlying system behind Misfits Aux breathing and airways is SpO2, which is the measurement for how much oxygen is in a patient's blood. Anything below 90% is not good news.<strong>Breathing</strong> is what maintains good SpO2 levels (you live in the real world right? You should know this...). When knocked unconscious, or in certain scenarios, playres may lose the ability to breath, at which point their SpO2 will slowly decrease.</p></article>
+      <article class="card"><h3>Airways</h3><p>Airways, otherwise known as your throat hole (unless youve discovered how to breathe out of your anus) are the thing that facilitates breathing. Being knocked unconscious, or encountering something like a chemical threat, can either obstruct or occlude an airway. Obstructed or occluded airways will no longer allow patients to breathe through them properly, and will diminish SpO2.</p></article></div>
+    <article class="card"><h3>Manual Manouevres</h3><p>Head extension or head turning is a fast way to help remove occlusions or obstructions from a patients airway and get them breathing again. Patients can also be put in the Recovery Position, which is a more sustained method of maintaining the airway - but it is not permanent.</p></article></div>
+      <article class="card"><h3>Airway Tube</h3><p>Medics have access to a new Airway Tube item that provides a reliable method of clearing and maintaining the airway. It also improves the rate of SpO2 recovery for players who receive it.</p></article></div>
+
+    <p class="notice"><strong>!</strong> Prolonged failure to breathe reduces SpO2. SpO2 must be >90% for players to be considered stable. Just because an airway is clear does not mean that the patient is breathing - they may need other systemic problems dealt with like heart rate, blood volume etc. before they are able to resume breathing.</p>
+    
+    
   </section>
 
-  <section id="misfits-items"><h2>Misfits medical additions</h2><div class="table-wrap"><table><thead><tr><th>Item or system</th><th>Role</th><th>Limits</th></tr></thead><tbody>
-    <tr><td>Emergency Fluid Bag</td><td>A 100 mL emergency blood-volume stopgap usable by non-medics.</td><td>Deliberately much weaker than medic IV bags.</td></tr>
-    <tr><td>TXA Injector</td><td>Medic treatment that modestly reduces blood loss for a limited time.</td><td>Does not bandage, stitch, restore blood or stabilise the patient by itself.</td></tr>
-    <tr><td>Universal Antagonist</td><td>Medic-only emergency reset that clears the patient's active medication burden.</td><td>Self-administration is allowed for medically qualified players; it does not repair the harm caused by the original condition.</td></tr>
-    <tr><td>Medical Aid Pack</td><td>Inventory item deployable as a persistent medical supply case.</td><td>Repacking preserves the remaining contents and does not refill it.</td></tr>
+  <section id="misfits-items"><h2>Misfits Medical Additions</h2><div class="table-wrap"><table><thead><tr><th>Item or system</th><th>Role</th><th>Limits</th></tr></thead><tbody>
+    <tr><td>Emergency Fluid Bag</td><td>A 100 mL emergency blood-volume stopgap usable by non-medics.</td><td>Deliberately a much smaller volume that standard IVs, but can be used in an emergency by any role.</td></tr>
+    <tr><td>TXA Injector</td><td>Medic-only treatment that modestly reduces blood loss for a limited time.</td><td>Does not bandage, stitch, restore blood or stabilise the patient by itself.</td></tr>
+    <tr><td>Universal Antagonist</td><td>Medic-only emergency reset that clears the patient's active medication burden.</td><td>Self-administration is allowed for medics. It will not remove any physiological effects caused by previous medication misuse.</td></tr>
+    <tr><td>Medical Aid Pack</td><td>A deployable medical supply crate for medic roles.</td><td>Repacking preserves the contents.</td></tr>
     <tr><td>Stretcher</td><td>Moves casualties and can provide a medical-facility treatment position.</td><td>Can be folded and recovered when no longer required.</td></tr>
-    <tr><td>Vanilla kit conversion</td><td>Converts retrieved First Aid Kits and Medikits into configured ACE supplies.</td><td>The output is controlled by the Aux configuration.</td></tr>
-    <tr><td>Misfits Serum</td><td>A joke injectable with a mild heart-rate, visual and short movement-speed effect.</td><td>Not a legitimate stabilisation treatment.</td></tr>
-    <tr><td>Misfits Essential Oils</td><td>Consumes an item, records a treatment and dispenses questionable wisdom.</td><td>Changes absolutely no medical state.</td></tr>
+    <tr><td>Vanilla Kit Conversion</td><td>Converts retrieved vanilla First Aid Kits and Medikits into more meaningful ACE supplies</td><td>The output is controlled via config.</td></tr>
+    <tr><td>Misfits Serum</td><td>A very serious injectable drug.</td><td>Not tested on humans, yet.</td></tr>
+    <tr><td>Misfits Essential Oils</td><td>Requisitioned from a TikTok wellness influencer.</td><td>Cures every single disease known to man.</td></tr>
   </tbody></table></div>
-  <p class="notice">Do not load Misfits Airway alongside KAT Airway. The Misfits system is the group's compact alternative, not a compatibility layer for the full KAT respiratory simulation.</p></section>
+    
+  <p class="notice">Do not load Misfits Airway alongside KAT Airway. The Misfits system is the group's compact alternative..</p></section>
 
-  <section id="troubleshooting"><h2>Why is the patient not waking up?</h2><ul class="checklist"><li>Are any wounds still open or actively bleeding?</li><li>Have they lost enough blood to require IV replacement?</li><li>Do they have a pulse and non-zero blood pressure?</li><li>Is the airway clear, are they breathing, and has SpO₂ recovered?</li><li>Are tourniquets still blocking medication or fluids?</li><li>Have they received too much morphine or conflicting medication?</li><li>Have bandaged wounds been stitched and fractures treated?</li><li>Have you allowed time for IVs, medication and ACE wake-up checks to take effect?</li></ul><p>When in doubt: stop adding drugs, check the triage log, repeat the vital checks, and work the problem in order.</p></section>
 </main>
 <footer>Misfits Handbook · Complete medical guide</footer>
 </body></html>
