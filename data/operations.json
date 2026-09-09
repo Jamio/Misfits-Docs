@@ -1,0 +1,72 @@
+{
+    "schemaVersion":  1,
+    "generatedAt":  "2026-09-09T11:38:16.9661661Z",
+    "operations":  [
+                       {
+                           "durationSeconds":  5400,
+                           "summary":  "A synthetic operation demonstrating a successful mission record.",
+                           "id":  "local-test-001",
+                           "date":  "2026-09-01",
+                           "demo":  true,
+                           "campaign":  "WWII",
+                           "players":  [
+                                           {
+                                               "id":  "mf-a997cc1aafb9f28ee4cd",
+                                               "kills":  12,
+                                               "group":  "Alpha",
+                                               "name":  "Test Alpha",
+                                               "treatments":  2,
+                                               "playtimeSeconds":  5400,
+                                               "role":  "Section Lead",
+                                               "deaths":  1
+                                           },
+                                           {
+                                               "id":  "mf-22539ca995170877f88b",
+                                               "kills":  5,
+                                               "group":  "Alpha",
+                                               "name":  "Test Bravo",
+                                               "treatments":  18,
+                                               "playtimeSeconds":  5000,
+                                               "role":  "Medic",
+                                               "deaths":  2
+                                           }
+                                       ],
+                           "name":  "Operation Red Test",
+                           "terrain":  "SPE_Normandy",
+                           "result":  "Success"
+                       },
+                       {
+                           "durationSeconds":  3600,
+                           "summary":  "A synthetic operation demonstrating a mixed mission result and returning attendance.",
+                           "id":  "local-test-002",
+                           "date":  "2026-09-08",
+                           "demo":  true,
+                           "campaign":  "2041",
+                           "players":  [
+                                           {
+                                               "id":  "mf-a997cc1aafb9f28ee4cd",
+                                               "kills":  8,
+                                               "group":  "Bravo",
+                                               "name":  "Test Alpha Renamed",
+                                               "treatments":  0,
+                                               "playtimeSeconds":  3600,
+                                               "role":  "Rifleman",
+                                               "deaths":  0
+                                           },
+                                           {
+                                               "id":  "mf-2d9729109fb770b6e58d",
+                                               "kills":  9,
+                                               "group":  "Bravo",
+                                               "name":  "\u003cTest Charlie\u003e",
+                                               "treatments":  1,
+                                               "playtimeSeconds":  3200,
+                                               "role":  "Autorifleman",
+                                               "deaths":  1
+                                           }
+                                       ],
+                           "name":  "Operation Blue Test",
+                           "terrain":  "Altis",
+                           "result":  "Partial success"
+                       }
+                   ]
+}
