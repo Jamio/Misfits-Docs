@@ -1,4 +1,18 @@
 {
   "schemaVersion": 1,
-  "people": []
+  "people": [
+              {"steamId": "76561198026778430",
+              "name": "Jamio",
+              "status": "active"},
+
+              {"steamId": "76561198032793508",
+              "name": "Jamio",
+              "status": "active"}
+
+    
+
+    
+
+    
+  ]
 }
