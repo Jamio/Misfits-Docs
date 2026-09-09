@@ -1,8 +1,23 @@
 {
-  "schemaVersion": 1,
-  "people": {
-    "mf-a997cc1aafb9f28ee4cd": { "status": "active" },
-    "mf-22539ca995170877f88b": { "status": "inactive" },
-    "mf-2d9729109fb770b6e58d": { "status": "active" }
-  }
+    "schemaVersion":  1,
+    "people":  {
+                   "mf-a997cc1aafb9f28ee4cd":  {
+                                                   "status":  "active"
+                                               },
+                   "mf-22539ca995170877f88b":  {
+                                                   "status":  "inactive"
+                                               },
+                   "mf-2d9729109fb770b6e58d":  {
+                                                   "status":  "active"
+                                               },
+                   "mf-04d97fc7c1a9c5f058af":  {
+                                                   "name":  "Jamio",
+                                                   "status":  "active"
+                                               },
+                   "mf-88b1efdc593906ab2138":  {
+                                                   "name":  "Kezz",
+                                                   "status":  "active"
+                                               }
+               },
+    "generatedAt":  "2026-09-09T20:12:14.7412506Z"
 }
