@@ -38,17 +38,28 @@
   <section id="patient-state"><h2>Why do patients go unconscious?</h2><p>ACE does not use any kind of "health bar" for damage. Trauma, blood volume, pain, heart rate, blood pressure, cardiac arrest and medication all interact. The Misfits Aux breathing system adds airway status, breathing and SpO₂ to that recovery loop.</p>
     <div class="grid">
       <article class="card"><h3>Open Wounds</h3><p>Open and bleeding wounds will prevent a patient from regaining consciousness.</p></article>
-      <article class="card"><h3>Pain</h3><p>Pain reduces effectiveness, and if it exceeds a threshold it can render a player unconsciousness.</p></article><article class="card"><h3>Blood Volume</h3><p>The normal in-game blood volume for players is 5L. There are four states of blood loss.
-      <ol class="steps"><li>
-      <strong style="color:#ffe20a;" >Lost some blood</strong> = Lost <15% blood volume / <750mL</li><li>
-       <strong style="color:#ffb10a;" >Lost a lot of blood</strong> = Lost 15-30% blood volume / 750 - 1500mL</li><li>
-         <strong style="color:#ff850a;" >Lost a large amount of blood</strong> = Lost 30-40% blood volume / 1500 - 2000mL</li><li>
-           <strong style="color:#ff330a;" >Lost a fatal amount of blood</strong> = Lost >40% blood volume / >2000mL</li><li>
-      </li><ol>
-<article class="card"><h3>Heart Rate</h3><p>A normal in-game range for heart rate is ~60-80bpm. Extreme low or high values will render players unconscious.</p></article>
-        <article class="card"><h3>Blood Pressure</h3><p>A product of blood volume and heart rate. Stable values are ~120/80.</p></article>
-        
-      </p></article></div>
+      <article class="card"><h3>Pain</h3><p>Pain reduces effectiveness, and if it exceeds a threshold it can render a player unconsciousness.</p></article>
+      <article class="card">
+  <h3>Blood Volume</h3>
+  <p>The normal in-game blood volume for players is 5L. There are four states of blood loss.</p>
+  <ol class="steps">
+    <li><strong style="color:#ffe20a;">Lost some blood</strong> = Lost &lt;15% blood volume / &lt;750mL</li>
+    <li><strong style="color:#ffb10a;">Lost a lot of blood</strong> = Lost 15–30% blood volume / 750–1500mL</li>
+    <li><strong style="color:#ff850a;">Lost a large amount of blood</strong> = Lost 30–40% blood volume / 1500–2000mL</li>
+    <li><strong style="color:#ff330a;">Lost a fatal amount of blood</strong> = Lost &gt;40% blood volume / &gt;2000mL</li>
+  </ol>
+</article>
+
+<article class="card">
+  <h3>Heart Rate</h3>
+  <p>A normal in-game range for heart rate is ~60–80bpm. Extreme low or high values will render players unconscious.</p>
+</article>
+
+<article class="card">
+  <h3>Blood Pressure</h3>
+  <p>A product of blood volume and heart rate. Stable values are ~120/80.</p>
+</article>
+</div>
     
     <h3>Stable does not mean awake</h3><p>Once the dangerous problems are corrected, ACE periodically checks whether an unconscious patient can wake. Epinephrine increases the opportunity for those checks, but is not a flat guarantee that someone can become conscious again.</p>
   </section>
