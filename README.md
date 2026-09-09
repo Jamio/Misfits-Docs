@@ -16,6 +16,9 @@ assets.
 - `systems.html`: everything the universal Aux changes for players and mission makers.
 - `medical.html`: casualty workflow, airway/breathing, PAK rules, and custom items.
 - `rules.html`: group conduct, gameplay, attendance, and technical expectations.
+- `guides.html`: the main guide directory linking Aux, medical, TFAR, Framework, mission-making, and campaign pages.
+- `about.html`: group introduction with rules and expectations rolled into one section.
+- `data/personnel.json`: manual personnel metadata keyed by the anonymised `mf-...` ID. Set `status` to `active` or `inactive`; operation publishing does not overwrite this file.
 - `campaigns.html`: campaign summaries and campaign-specific mod information.
 - `mission-making.html`: framework, Aux objects/modules, dependencies, and submission checks.
 - `packages.html`: detailed mod-loading and troubleshooting reference.
