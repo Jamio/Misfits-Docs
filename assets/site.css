@@ -32,6 +32,16 @@ h2 { margin-top:2.8rem; line-height:1.2; } h3 { line-height:1.25; } .lede { colo
 .editor-note { padding:.85rem 1rem; border:1px dashed #555861; color:var(--muted); background:#0a0a0b; }
 table { width:100%; border-collapse:collapse; margin:1rem 0 2rem; } th,td { padding:.75rem; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; } th { color:var(--blue); }
 code { color:#dff5ff; background:#131820; padding:.1rem .3rem; border-radius:3px; } ul,ol { padding-left:1.3rem; }
+kbd { display:inline-block; min-width:1.6em; padding:.08rem .38rem; border:1px solid #555861; border-bottom-width:2px; border-radius:3px; color:var(--white); background:#17191e; font:700 .84em/1.5 system-ui,sans-serif; text-align:center; }
+.contents { display:flex; flex-wrap:wrap; gap:.55rem; margin:0 0 2.5rem; padding:1rem; border:1px solid var(--line); background:var(--panel); }
+.contents strong { width:100%; color:var(--muted); font-size:.75rem; letter-spacing:.1em; text-transform:uppercase; }
+.contents a { padding:.28rem .6rem; border:1px solid #3d4047; color:var(--white); text-decoration:none; font-size:.82rem; }
+.contents a:hover { border-color:var(--blue); }
+.steps > li { margin-bottom:.7rem; padding-left:.25rem; }
+.checklist { list-style:none; padding-left:0; }
+.checklist li { position:relative; margin:.5rem 0; padding-left:1.6rem; }
+.checklist li::before { content:"□"; position:absolute; left:0; color:var(--blue); font-weight:900; }
+section[id] { scroll-margin-top:6rem; }
 footer { padding:1.5rem 0 3rem; border-top:1px solid var(--line); color:var(--muted); }
 .page-head { display:flex; justify-content:space-between; align-items:end; gap:2rem; margin-bottom:2rem; border-bottom:1px solid var(--line); padding-bottom:1.5rem; }
 .page-head h1 { margin:.25rem 0 0; font-size:clamp(2.2rem,6vw,4.4rem); }
