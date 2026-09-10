@@ -52,6 +52,18 @@
 
               {"steamId": "76561198029703434",
               "name": "Pegasus",
+              "status": "active"},
+
+              {"steamId": "76561198001212351",
+              "name": "Lister",
+              "status": "active"},
+
+              {"steamId": "76561197973504405",
+              "name": "Black Jesus",
+              "status": "active"},
+
+              {"steamId": "76561198068814745",
+              "name": "Tor",
               "status": "active"}
 
 
