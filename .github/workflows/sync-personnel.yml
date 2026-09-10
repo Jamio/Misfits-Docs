@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - data/personnel-registry.json
+      - .github/workflows/sync-personnel.yml
   workflow_dispatch:
 
 permissions:
