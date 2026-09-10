@@ -74,7 +74,22 @@
       "name": "Pegasus",
       "status": "active",
       "managed": true
+    },
+    "mf-641a51ea8a362eb64a57": {
+      "name": "Lister",
+      "status": "active",
+      "managed": true
+    },
+    "mf-c8876aebed4e5cec7276": {
+      "name": "Black Jesus",
+      "status": "active",
+      "managed": true
+    },
+    "mf-da2d88883e3fbf619028": {
+      "name": "Tor",
+      "status": "active",
+      "managed": true
     }
   },
-  "generatedAt": "2026-09-10T18:53:25.1999260Z"
+  "generatedAt": "2026-09-10T18:58:19.5548327Z"
 }
