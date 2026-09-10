@@ -7,7 +7,29 @@
 
               {"steamId": "76561198032793508",
               "name": "Kezz",
+              "status": "active"},
+
+              {"steamId": "76561198015405206",
+              "name": "Azu",
+              "status": "active"},
+
+              {"steamId": "76561198153308918",
+              "name": "Wolfie",
+              "status": "active"},
+
+              {"steamId": "76561198063998972",
+              "name": "Highlander",
+              "status": "active"},
+
+              {"steamId": "76561198017255554",
+              "name": "Hank",
+              "status": "active"},
+
+              {"steamId": "76561198018576894",
+              "name": "Terafa",
               "status": "active"}
+
+    
 
     
 
