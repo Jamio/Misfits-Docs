@@ -10,14 +10,41 @@
                    "mf-2d9729109fb770b6e58d":  {
                                                    "status":  "active"
                                                },
-                   "mf-04d97fc7c1a9c5f058af":  {
+                   "mf-831db6eaf5e5f0057c32":  {
                                                    "name":  "Jamio",
-                                                   "status":  "active"
+                                                   "status":  "active",
+                                                   "managed":  true
                                                },
-                   "mf-88b1efdc593906ab2138":  {
+                   "mf-de645583928b2aa3bd47":  {
                                                    "name":  "Kezz",
-                                                   "status":  "active"
+                                                   "status":  "active",
+                                                   "managed":  true
+                                               },
+                   "mf-ec41ac84cd60294e8f0c":  {
+                                                   "name":  "Azu",
+                                                   "status":  "active",
+                                                   "managed":  true
+                                               },
+                   "mf-4b2f5ae7a30c62f82b38":  {
+                                                   "name":  "Wolfie",
+                                                   "status":  "active",
+                                                   "managed":  true
+                                               },
+                   "mf-73838a4c7382999a2d7e":  {
+                                                   "name":  "Highlander",
+                                                   "status":  "active",
+                                                   "managed":  true
+                                               },
+                   "mf-60004acf03efe89697f6":  {
+                                                   "name":  "Hank",
+                                                   "status":  "active",
+                                                   "managed":  true
+                                               },
+                   "mf-867e0c0ed43b76ce6c81":  {
+                                                   "name":  "Terafa",
+                                                   "status":  "active",
+                                                   "managed":  true
                                                }
                },
-    "generatedAt":  "2026-09-09T20:12:14.7412506Z"
+    "generatedAt":  "2026-09-10T18:24:46.2814883Z"
 }

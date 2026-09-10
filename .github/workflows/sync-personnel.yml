@@ -1,0 +1,113 @@
+name: Sync personnel list
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - data/personnel-registry.json
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: personnel-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out handbook
+        uses: actions/checkout@v4
+
+      - name: Generate public personnel data
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          Set-StrictMode -Version Latest
+
+          $sourcePath = 'data/personnel-registry.json'
+          $generatedPath = 'data/personnel.json'
+          $source = Get-Content -Raw -LiteralPath $sourcePath | ConvertFrom-Json
+          $generated = Get-Content -Raw -LiteralPath $generatedPath | ConvertFrom-Json
+          if ($source.schemaVersion -ne 1 -or $generated.schemaVersion -ne 1) {
+              throw 'Unsupported personnel registry schema.'
+          }
+          if ($null -eq $generated.people) {
+              $generated | Add-Member -NotePropertyName people -NotePropertyValue ([pscustomobject]@{})
+          }
+
+          $people = @($source.people)
+          $seenIds = @{}
+          foreach ($person in $people) {
+              $steamId = [string]$person.steamId
+              if ($steamId -notmatch '^\d{17}$') { throw "Invalid Steam UID: '$steamId'" }
+              if ($seenIds.ContainsKey($steamId)) { throw "Duplicate Steam UID: '$steamId'" }
+              $seenIds[$steamId] = $true
+              if ([string]::IsNullOrWhiteSpace([string]$person.name)) { throw "Personnel entry '$steamId' has no name." }
+              if ([string]$person.status -notin @('active', 'inactive')) { throw "Invalid status for '$($person.name)'." }
+          }
+
+          $sourceNames = @($people | ForEach-Object { [string]$_.name })
+          @($generated.people.PSObject.Properties) | Where-Object {
+              $managedProperty = $_.Value.PSObject.Properties['managed']
+              $nameProperty = $_.Value.PSObject.Properties['name']
+              ($null -ne $managedProperty -and $managedProperty.Value -eq $true) -or
+                  ($null -ne $nameProperty -and $sourceNames -contains [string]$nameProperty.Value)
+          } | ForEach-Object {
+              $generated.people.PSObject.Properties.Remove($_.Name)
+          }
+
+          # Steam IDs already live in this public repository. This stable public
+          # namespace key only keeps them out of generated operation data.
+          $secret = [Text.Encoding]::UTF8.GetBytes('MisfitsOperationsHub/personnel/v1')
+          $hmac = [Security.Cryptography.HMACSHA256]::new($secret)
+          try {
+              foreach ($person in $people) {
+                  $digest = $hmac.ComputeHash([Text.Encoding]::UTF8.GetBytes([string]$person.steamId))
+                  $publicId = 'mf-' + (-join ($digest[0..9] | ForEach-Object { $_.ToString('x2') }))
+                  $profile = [pscustomobject][ordered]@{
+                      name = [string]$person.name
+                      status = [string]$person.status
+                      managed = $true
+                  }
+                  $existing = $generated.people.PSObject.Properties[$publicId]
+                  if ($null -eq $existing) {
+                      $generated.people | Add-Member -NotePropertyName $publicId -NotePropertyValue $profile
+                  } else {
+                      $existing.Value = $profile
+                  }
+              }
+          } finally {
+              $hmac.Dispose()
+              [Array]::Clear($secret, 0, $secret.Length)
+          }
+
+          $timestamp = [DateTime]::UtcNow.ToString('o')
+          if ($null -eq $generated.PSObject.Properties['generatedAt']) {
+              $generated | Add-Member -NotePropertyName generatedAt -NotePropertyValue $timestamp
+          } else {
+              $generated.generatedAt = $timestamp
+          }
+
+          $json = $generated | ConvertTo-Json -Depth 10
+          foreach ($person in $people) {
+              if ($json.Contains([string]$person.steamId)) {
+                  throw 'A Steam UID remains in generated personnel data.'
+              }
+          }
+          [IO.File]::WriteAllText($generatedPath, $json + [Environment]::NewLine, [Text.UTF8Encoding]::new($false))
+
+      - name: Commit generated list
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/personnel.json
+          if git diff --cached --quiet; then
+            echo "Personnel list is already current."
+          else
+            git commit -m "Sync personnel list"
+            git push
+          fi
