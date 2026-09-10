@@ -1,145 +1,145 @@
 {
-    "schemaVersion":  1,
-    "people":  {
-                   "mf-a997cc1aafb9f28ee4cd":  {
-                                                   "status":  "active"
-                                               },
-                   "mf-22539ca995170877f88b":  {
-                                                   "status":  "inactive"
-                                               },
-                   "mf-2d9729109fb770b6e58d":  {
-                                                   "status":  "active"
-                                               },
-                   "mf-831db6eaf5e5f0057c32":  {
-                                                   "name":  "Jamio",
-                                                   "status":  "active",
-                                                   "managed":  true
-                                               },
-                   "mf-de645583928b2aa3bd47":  {
-                                                   "name":  "Kezz",
-                                                   "status":  "active",
-                                                   "managed":  true
-                                               },
-                   "mf-ec41ac84cd60294e8f0c":  {
-                                                   "name":  "Azu",
-                                                   "status":  "active",
-                                                   "managed":  true
-                                               },
-                   "mf-4b2f5ae7a30c62f82b38":  {
-                                                   "name":  "Wolfie",
-                                                   "status":  "active",
-                                                   "managed":  true
-                                               },
-                   "mf-73838a4c7382999a2d7e":  {
-                                                   "name":  "Highlander",
-                                                   "status":  "active",
-                                                   "managed":  true
-                                               },
-                   "mf-60004acf03efe89697f6":  {
-                                                   "name":  "Hank",
-                                                   "status":  "active",
-                                                   "managed":  true
-                                               },
-                   "mf-867e0c0ed43b76ce6c81":  {
-                                                   "name":  "Terafa",
-                                                   "status":  "active",
-                                                   "managed":  true
-                                               },
-                   "mf-bb2251e5446d0147a314":  {
-                                                   "name":  "Stormpie",
-                                                   "status":  "active",
-                                                   "managed":  true
-                                               },
-                   "mf-5c8a2a218b463cf98690":  {
-                                                   "name":  "Squid",
-                                                   "status":  "active",
-                                                   "managed":  true
-                                               },
-                   "mf-8cd7bb9d833a5a1a3556":  {
-                                                   "name":  "Chocco",
-                                                   "status":  "active",
-                                                   "managed":  true
-                                               },
-                   "mf-a13f533d54a065d10599":  {
-                                                   "name":  "Madragoon",
-                                                   "status":  "active",
-                                                   "managed":  true
-                                               },
-                   "mf-b5250f8f36422aca3edc":  {
-                                                   "name":  "Reeves",
-                                                   "status":  "active",
-                                                   "managed":  true
-                                               },
-                   "mf-e048547c98d239245eaa":  {
-                                                   "name":  "Pegasus",
-                                                   "status":  "active",
-                                                   "managed":  true
-                                               },
-                   "mf-641a51ea8a362eb64a57":  {
-                                                   "name":  "Lister",
-                                                   "status":  "active",
-                                                   "managed":  true
-                                               },
-                   "mf-c8876aebed4e5cec7276":  {
-                                                   "name":  "Black Jesus",
-                                                   "status":  "active",
-                                                   "managed":  true
-                                               },
-                   "mf-da2d88883e3fbf619028":  {
-                                                   "name":  "Tor",
-                                                   "status":  "active",
-                                                   "managed":  true
-                                               },
-                   "mf-3e2d493c0ba19694d9ba":  {
-                                                   "name":  "Max",
-                                                   "status":  "active",
-                                                   "managed":  true
-                                               },
-                   "mf-49df6774a208ddda396b":  {
-                                                   "name":  "Beat",
-                                                   "status":  "inactive",
-                                                   "managed":  true
-                                               },
-                   "mf-7d3e60cc339d8327a4ac":  {
-                                                   "name":  "Buccaneer",
-                                                   "status":  "inactive",
-                                                   "managed":  true
-                                               },
-                   "mf-54c92a87047fe710e72b":  {
-                                                   "name":  "Spela",
-                                                   "status":  "active",
-                                                   "managed":  true
-                                               },
-                   "mf-ca6d7ff72e4324eb8c28":  {
-                                                   "name":  "Tex",
-                                                   "status":  "active",
-                                                   "managed":  true
-                                               },
-                   "mf-0104ad9511b532338594":  {
-                                                   "name":  "George",
-                                                   "status":  "inactive",
-                                                   "managed":  true
-                                               },
-                   "mf-8599c50f5f627cc0cc1a":  {
-                                                   "name":  "Rook",
-                                                   "status":  "inactive",
-                                                   "managed":  true
-                                               },
-                   "mf-06aa7d0fe96f80f4772e":  {
-                                                   "name":  "Brit",
-                                                   "status":  "inactive",
-                                                   "managed":  true
-                                               },
-                   "mf-4276f047236be395368e":  {
-                                                   "name":  "Cuch",
-                                                   "status":  "active",
-                                                   "managed":  true
-                                               },
-                   "mf-dab824ebcbdf7ea6c4a6":  {
-                                                   "name":  "Dave",
-                                                   "status":  "inactive",
-                                                   "managed":  true
-                                               }
-               },
-    "generatedAt":  "2026-09-10T22:30:43.5145461Z"
+  "schemaVersion": 1,
+  "people": {
+    "mf-a997cc1aafb9f28ee4cd": {
+      "status": "active"
+    },
+    "mf-22539ca995170877f88b": {
+      "status": "inactive"
+    },
+    "mf-2d9729109fb770b6e58d": {
+      "status": "active"
+    },
+    "mf-831db6eaf5e5f0057c32": {
+      "name": "Jamio",
+      "status": "active",
+      "managed": true
+    },
+    "mf-de645583928b2aa3bd47": {
+      "name": "Kezz",
+      "status": "active",
+      "managed": true
+    },
+    "mf-ec41ac84cd60294e8f0c": {
+      "name": "Azu",
+      "status": "active",
+      "managed": true
+    },
+    "mf-4b2f5ae7a30c62f82b38": {
+      "name": "Wolfie",
+      "status": "active",
+      "managed": true
+    },
+    "mf-73838a4c7382999a2d7e": {
+      "name": "Highlander",
+      "status": "active",
+      "managed": true
+    },
+    "mf-60004acf03efe89697f6": {
+      "name": "Hank",
+      "status": "active",
+      "managed": true
+    },
+    "mf-867e0c0ed43b76ce6c81": {
+      "name": "Terafa",
+      "status": "active",
+      "managed": true
+    },
+    "mf-bb2251e5446d0147a314": {
+      "name": "Stormpie",
+      "status": "active",
+      "managed": true
+    },
+    "mf-5c8a2a218b463cf98690": {
+      "name": "Squid",
+      "status": "active",
+      "managed": true
+    },
+    "mf-8cd7bb9d833a5a1a3556": {
+      "name": "Chocco",
+      "status": "active",
+      "managed": true
+    },
+    "mf-a13f533d54a065d10599": {
+      "name": "Madragoon",
+      "status": "active",
+      "managed": true
+    },
+    "mf-b5250f8f36422aca3edc": {
+      "name": "Reeves",
+      "status": "active",
+      "managed": true
+    },
+    "mf-e048547c98d239245eaa": {
+      "name": "Pegasus",
+      "status": "active",
+      "managed": true
+    },
+    "mf-641a51ea8a362eb64a57": {
+      "name": "Lister",
+      "status": "active",
+      "managed": true
+    },
+    "mf-c8876aebed4e5cec7276": {
+      "name": "Black Jesus",
+      "status": "active",
+      "managed": true
+    },
+    "mf-da2d88883e3fbf619028": {
+      "name": "Tor",
+      "status": "active",
+      "managed": true
+    },
+    "mf-3e2d493c0ba19694d9ba": {
+      "name": "Max",
+      "status": "active",
+      "managed": true
+    },
+    "mf-49df6774a208ddda396b": {
+      "name": "Beat",
+      "status": "inactive",
+      "managed": true
+    },
+    "mf-7d3e60cc339d8327a4ac": {
+      "name": "Buccaneer",
+      "status": "inactive",
+      "managed": true
+    },
+    "mf-54c92a87047fe710e72b": {
+      "name": "Spela",
+      "status": "active",
+      "managed": true
+    },
+    "mf-ca6d7ff72e4324eb8c28": {
+      "name": "Tex",
+      "status": "active",
+      "managed": true
+    },
+    "mf-0104ad9511b532338594": {
+      "name": "George",
+      "status": "inactive",
+      "managed": true
+    },
+    "mf-8599c50f5f627cc0cc1a": {
+      "name": "Rook",
+      "status": "inactive",
+      "managed": true
+    },
+    "mf-06aa7d0fe96f80f4772e": {
+      "name": "Brit",
+      "status": "inactive",
+      "managed": true
+    },
+    "mf-4276f047236be395368e": {
+      "name": "Cuch",
+      "status": "active",
+      "managed": true
+    },
+    "mf-dab824ebcbdf7ea6c4a6": {
+      "name": "Dave",
+      "status": "inactive",
+      "managed": true
+    }
+  },
+  "generatedAt": "2026-09-10T22:31:17.6034809Z"
 }
