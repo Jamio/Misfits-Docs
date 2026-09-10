@@ -44,7 +44,37 @@
       "name": "Terafa",
       "status": "active",
       "managed": true
+    },
+    "mf-bb2251e5446d0147a314": {
+      "name": "Stormpie",
+      "status": "active",
+      "managed": true
+    },
+    "mf-5c8a2a218b463cf98690": {
+      "name": "Squid",
+      "status": "active",
+      "managed": true
+    },
+    "mf-8cd7bb9d833a5a1a3556": {
+      "name": "Chocco",
+      "status": "active",
+      "managed": true
+    },
+    "mf-a13f533d54a065d10599": {
+      "name": "Madragoon",
+      "status": "active",
+      "managed": true
+    },
+    "mf-b5250f8f36422aca3edc": {
+      "name": "Reeves",
+      "status": "active",
+      "managed": true
+    },
+    "mf-e048547c98d239245eaa": {
+      "name": "Pegasus",
+      "status": "active",
+      "managed": true
     }
   },
-  "generatedAt": "2026-09-10T18:25:57.1233624Z"
+  "generatedAt": "2026-09-10T18:53:25.1999260Z"
 }
