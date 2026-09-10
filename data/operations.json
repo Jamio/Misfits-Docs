@@ -4,7 +4,7 @@
     "operations":  [
                        {
                            "durationSeconds":  5400,
-                           "summary":  "A synthetic operation demonstrating a successful mission record.",
+                           "summary":  "A test operation demonstrating a successful mission record.",
                            "id":  "local-test-001",
                            "date":  "2026-09-01",
                            "demo":  true,
@@ -37,7 +37,7 @@
                        },
                        {
                            "durationSeconds":  3600,
-                           "summary":  "A synthetic operation demonstrating a mixed mission result and returning attendance.",
+                           "summary":  "A test operation demonstrating a mixed mission result and returning attendance.",
                            "id":  "local-test-002",
                            "date":  "2026-09-08",
                            "demo":  true,
