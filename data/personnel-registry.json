@@ -27,9 +27,34 @@
 
               {"steamId": "76561198018576894",
               "name": "Terafa",
+              "status": "active"},
+
+              {"steamId": "76561197975184782",
+              "name": "Stormpie",
+              "status": "active"},
+
+
+              {"steamId": "76561198151789266",
+              "name": "Squid",
+              "status": "active"},
+
+              {"steamId": "76561198040092251",
+              "name": "Chocco",
+              "status": "active"},
+  
+              {"steamId": "76561198051659319",
+              "name": "Madragoon",
+              "status": "active"},
+
+              {"steamId": "76561198148149828",
+              "name": "Reeves",
+              "status": "active"},
+
+              {"steamId": "76561198029703434",
+              "name": "Pegasus",
               "status": "active"}
 
-    
+
 
     
 
