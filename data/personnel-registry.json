@@ -64,7 +64,7 @@
 
               {"steamId": "76561198068814745",
               "name": "Tor",
-              "status": "active"}
+              "status": "active"},
 
               {"steamId": "76561198008224929",
               "name": "Max",
@@ -72,39 +72,39 @@
 
               {"steamId": "76561198032879553",
               "name": "Beat",
-              "status": "Inactive"},
+              "status": "inactive"},
 
               {"steamId": "76561197997814116",
               "name": "Buccaneer",
-              "status": "Inactive"},
+              "status": "inactive"},
 
               {"steamId": "76561198082414127",
               "name": "Spela",
-              "status": "Active"},
+              "status": "active"},
 
               {"steamId": "76561198273585303",
               "name": "Tex",
-              "status": "Active"},
+              "status": "active"},
 
               {"steamId": "76561198003537163",
               "name": "George",
-              "status": "Inactive"},
+              "status": "inactive"},
 
               {"steamId": "76561198054318304",
               "name": "Rook",
-              "status": "Inactive"},
+              "status": "inactive"},
 
               {"steamId": "76561197970700676",
               "name": "Brit",
-              "status": "Inactive"},
+              "status": "inactive"},
 
               {"steamId": "76561197963149068",
               "name": "Cuch",
-              "status": "Active"},
+              "status": "active"},
 
               {"steamId": "76561197970014814",
               "name": "Dave",
-              "status": "Inactive"}
+              "status": "inactive"}
 
     
 

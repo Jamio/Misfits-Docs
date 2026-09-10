@@ -43,11 +43,12 @@ jobs:
           $seenIds = @{}
           foreach ($person in $people) {
               $steamId = [string]$person.steamId
+              $status = ([string]$person.status).ToLowerInvariant()
               if ($steamId -notmatch '^\d{17}$') { throw "Invalid Steam UID: '$steamId'" }
               if ($seenIds.ContainsKey($steamId)) { throw "Duplicate Steam UID: '$steamId'" }
               $seenIds[$steamId] = $true
               if ([string]::IsNullOrWhiteSpace([string]$person.name)) { throw "Personnel entry '$steamId' has no name." }
-              if ([string]$person.status -notin @('active', 'inactive')) { throw "Invalid status for '$($person.name)'." }
+              if ($status -notin @('active', 'inactive')) { throw "Invalid status for '$($person.name)'." }
           }
 
           $sourceNames = @($people | ForEach-Object { [string]$_.name })
@@ -70,7 +71,7 @@ jobs:
                   $publicId = 'mf-' + (-join ($digest[0..9] | ForEach-Object { $_.ToString('x2') }))
                   $profile = [pscustomobject][ordered]@{
                       name = [string]$person.name
-                      status = [string]$person.status
+                      status = ([string]$person.status).ToLowerInvariant()
                       managed = $true
                   }
                   $existing = $generated.people.PSObject.Properties[$publicId]
