@@ -1,4 +1,5 @@
 const formatDuration = seconds => {
+  if (seconds === undefined || seconds === null || !Number.isFinite(Number(seconds))) return "—";
   const minutes = Math.max(0, Math.round(seconds / 60));
   const hours = Math.floor(minutes / 60);
   const remainder = minutes % 60;

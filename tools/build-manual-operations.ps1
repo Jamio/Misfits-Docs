@@ -43,14 +43,15 @@ try {
         try { $source = Get-Content -Raw -LiteralPath $file.FullName | ConvertFrom-Json }
         catch { throw "$context is not valid JSON: $($_.Exception.Message)" }
 
-        foreach ($field in @('id','name','date','campaign','terrain','durationSeconds','result','players')) {
+        foreach ($field in @('id','name','date','campaign','terrain','result','players')) {
             [void](Get-RequiredProperty $source $field $context)
         }
         $operationId = [string]$source.id
         if ($manualIds.ContainsKey($operationId)) { throw "Duplicate manual operation id '$operationId'." }
         $manualIds[$operationId] = $true
         if ([string]$source.date -notmatch '^\d{4}-\d{2}-\d{2}$') { throw "$context date must use YYYY-MM-DD." }
-        if ([double]$source.durationSeconds -lt 0) { throw "$context durationSeconds cannot be negative." }
+        $durationProperty = $source.PSObject.Properties['durationSeconds']
+        if ($null -ne $durationProperty -and $null -ne $durationProperty.Value -and [double]$durationProperty.Value -lt 0) { throw "$context durationSeconds cannot be negative." }
 
         $qualityProperty = $source.PSObject.Properties['recordQuality']
         $quality = if ($null -eq $qualityProperty) { 'partial' } else { ([string]$qualityProperty.Value).ToLowerInvariant() }
@@ -92,7 +93,7 @@ try {
             campaign = [string]$source.campaign
             terrain = [string]$source.terrain
             date = [string]$source.date
-            durationSeconds = [math]::Round([double]$source.durationSeconds)
+            durationSeconds = if ($null -eq $durationProperty -or $null -eq $durationProperty.Value) { $null } else { [math]::Round([double]$durationProperty.Value) }
             result = [string]$source.result
             summary = if ($null -eq $summaryProperty) { '' } else { [string]$summaryProperty.Value }
             authors = $authors

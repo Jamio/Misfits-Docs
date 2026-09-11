@@ -18,4 +18,6 @@ linked record automatically.
 - `full`: the record is believed to contain the complete export-equivalent data.
 
 Unknown statistics should be omitted, not entered as zero. Only use zero when
-you know the actual result was zero.
+you know the actual result was zero. `durationSeconds`, `summary`, `authors`,
+and every individual player statistic are optional when the old information is
+not available.
