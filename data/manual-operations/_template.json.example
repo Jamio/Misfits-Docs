@@ -1,0 +1,33 @@
+{
+  "id": "2023-08-19-vietnam-pmc-13",
+  "name": "Misfits PMC Mission 13",
+  "date": "2023-08-19",
+  "campaign": "Vietnam PMC",
+  "terrain": "Cam Lao Nam",
+  "durationSeconds": 7200,
+  "result": "Success",
+  "summary": "Optional short description of the operation.",
+  "recordQuality": "partial",
+  "authors": [
+    {
+      "steamId": "76561198026778430",
+      "role": "primary"
+    }
+  ],
+  "players": [
+    {
+      "steamId": "76561198026778430",
+      "role": "Team Leader",
+      "group": "Alpha",
+      "kills": 12,
+      "deaths": 1
+    },
+    {
+      "steamId": "76561198032793508",
+      "role": "Medic"
+    },
+    {
+      "steamId": "76561198000000099"
+    }
+  ]
+}

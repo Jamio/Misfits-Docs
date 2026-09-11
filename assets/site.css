@@ -83,7 +83,7 @@ footer { padding:1.5rem 0 3rem; border-top:1px solid var(--line); color:var(--mu
 .page-head { display:flex; justify-content:space-between; align-items:end; gap:2rem; margin-bottom:2rem; border-bottom:1px solid var(--line); padding-bottom:1.5rem; }
 .page-head h1 { margin:.25rem 0 0; font-size:clamp(2.2rem,6vw,4.4rem); }
 .status { color:var(--accent-text); font-size:.82rem; letter-spacing:.08em; text-transform:uppercase; }
-.stats-strip { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; margin:1.25rem 0 2rem; background:var(--line); border:1px solid var(--line); }
+.stats-strip { display:grid; grid-template-columns:repeat(auto-fit,minmax(9rem,1fr)); gap:1px; margin:1.25rem 0 2rem; background:var(--line); border:1px solid var(--line); }
 .stat { padding:1rem; background:var(--panel); } .stat strong { display:block; font-size:1.6rem; line-height:1.1; } .stat span { color:var(--muted); font-size:.78rem; text-transform:uppercase; letter-spacing:.08em; }
 .operation-list { display:grid; gap:.75rem; }
 .operation { display:grid; grid-template-columns:8rem 1fr auto; align-items:center; gap:1.25rem; padding:1.1rem; border:1px solid var(--line); background:var(--panel); color:var(--white); text-decoration:none; }

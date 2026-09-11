@@ -1,0 +1,21 @@
+# Historical operation records
+
+Create one `.json` file per historical operation in this folder. On GitHub,
+open `_template.json.example`, copy its contents, then use **Add file → Create
+new file** and give the record a unique name ending in `.json`, such as
+`2023-08-19-vietnam-pmc-13.json`.
+
+Saving the file runs an automatic validation and rebuilds the Operations Hub.
+Use Steam IDs to link attendance and authorship to service records. A Steam ID
+does not need to be in the Personnel registry yet: until it is added, the site
+displays that ID as the player's name. Adding the player later updates every
+linked record automatically.
+
+`recordQuality` may be:
+
+- `attendance`: only attendance is known;
+- `partial`: some statistics are known; or
+- `full`: the record is believed to contain the complete export-equivalent data.
+
+Unknown statistics should be omitted, not entered as zero. Only use zero when
+you know the actual result was zero.

@@ -1,0 +1,41 @@
+name: Sync historical operations
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - data/manual-operations/**
+      - tools/build-manual-operations.ps1
+      - .github/workflows/sync-manual-operations.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: historical-operations-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out handbook
+        uses: actions/checkout@v4
+
+      - name: Build historical operation records
+        shell: pwsh
+        run: ./tools/build-manual-operations.ps1
+
+      - name: Commit generated archive
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/operations.json
+          if git diff --cached --quiet; then
+            echo "Operation archive is already current."
+          else
+            git commit -m "Sync historical operations"
+            git push
+          fi
