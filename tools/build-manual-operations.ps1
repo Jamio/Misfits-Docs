@@ -92,7 +92,7 @@ try {
         if ($image -and $image -notmatch '^assets/operations/[A-Za-z0-9._/-]+\.(jpg|jpeg|png|webp|svg)$') {
             throw "$context image must be a relative assets/operations path using jpg, jpeg, png, webp, or svg."
         }
-        $manualOperations += [pscustomobject][ordered]@{
+        $outputOperation = [ordered]@{
             id = $operationId
             name = [string]$source.name
             campaign = [string]$source.campaign
@@ -101,13 +101,14 @@ try {
             durationSeconds = if ($null -eq $durationProperty -or $null -eq $durationProperty.Value) { $null } else { [math]::Round([double]$durationProperty.Value) }
             result = [string]$source.result
             summary = if ($null -eq $summaryProperty) { '' } else { [string]$summaryProperty.Value }
-            image = $image
             authors = $authors
             players = $players
             manual = $true
             recordQuality = $quality
             sourceFile = $file.Name
         }
+        if ($image) { $outputOperation['image'] = $image }
+        $manualOperations += [pscustomobject]$outputOperation
     }
 
     $automaticOperations = @($archive.operations | Where-Object {
@@ -121,7 +122,9 @@ try {
     }
 
     $archive.operations = @($automaticOperations) + @($manualOperations)
-    $archive.generatedAt = [DateTime]::UtcNow.ToString('o')
+    # Keep the archive timestamp stable for manual-only rebuilds. Updating it on
+    # every run creates a bot commit even when no operation data changed, which
+    # cancels the Pages deployment that triggered this workflow.
     $json = $archive | ConvertTo-Json -Depth 20
     foreach ($person in @($registry.people)) {
         if ($json.Contains([string]$person.steamId)) { throw 'A registered Steam UID remains in generated operation data.' }
