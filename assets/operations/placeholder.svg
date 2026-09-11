@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" role="img" aria-labelledby="title description">
+  <title id="title">Operation image placeholder</title>
+  <desc id="description">A dark placeholder for a future 1920 by 1080 operation screenshot.</desc>
+  <defs>
+    <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M80 0H0V80" fill="none" stroke="#ffffff" stroke-opacity=".035" stroke-width="2"/>
+    </pattern>
+    <linearGradient id="fade" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#101923"/><stop offset="1" stop-color="#07090c"/>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#fade)"/><rect width="1920" height="1080" fill="url(#grid)"/>
+  <path d="M0 900 620 280l340 340 220-220 740 740" fill="none" stroke="#2c9cff" stroke-opacity=".22" stroke-width="4"/>
+  <rect x="490" y="330" width="940" height="420" rx="8" fill="#090c10" fill-opacity=".78" stroke="#2c9cff" stroke-opacity=".55" stroke-width="3"/>
+  <text x="960" y="515" fill="#f4f6f8" font-family="Arial,Helvetica,sans-serif" font-size="76" font-weight="700" text-anchor="middle" letter-spacing="12">OPERATION IMAGE</text>
+  <text x="960" y="610" fill="#9aa6b2" font-family="Arial,Helvetica,sans-serif" font-size="34" text-anchor="middle" letter-spacing="7">1920 × 1080</text>
+  <path d="M780 670h360" stroke="#2c9cff" stroke-width="8"/>
+</svg>

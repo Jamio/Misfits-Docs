@@ -21,3 +21,11 @@ Unknown statistics should be omitted, not entered as zero. Only use zero when
 you know the actual result was zero. `durationSeconds`, `summary`, `authors`,
 and every individual player statistic are optional when the old information is
 not available.
+
+## Operation screenshots
+
+Every operation page has a 16:9 placeholder. For a historical record, upload a
+1920x1080 JPG, PNG, or WebP file to `assets/operations/`, then either add its
+relative path to the record's optional `image` field or add it to
+`data/operation-images.json`. The separate image map is the safest option for
+automatically exported operations because statistics rebuilds do not touch it.

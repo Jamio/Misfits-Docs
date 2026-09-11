@@ -87,6 +87,11 @@ try {
         }
 
         $summaryProperty = $source.PSObject.Properties['summary']
+        $imageProperty = $source.PSObject.Properties['image']
+        $image = if ($null -eq $imageProperty) { '' } else { [string]$imageProperty.Value }
+        if ($image -and $image -notmatch '^assets/operations/[A-Za-z0-9._/-]+\.(jpg|jpeg|png|webp|svg)$') {
+            throw "$context image must be a relative assets/operations path using jpg, jpeg, png, webp, or svg."
+        }
         $manualOperations += [pscustomobject][ordered]@{
             id = $operationId
             name = [string]$source.name
@@ -96,6 +101,7 @@ try {
             durationSeconds = if ($null -eq $durationProperty -or $null -eq $durationProperty.Value) { $null } else { [math]::Round([double]$durationProperty.Value) }
             result = [string]$source.result
             summary = if ($null -eq $summaryProperty) { '' } else { [string]$summaryProperty.Value }
+            image = $image
             authors = $authors
             players = $players
             manual = $true

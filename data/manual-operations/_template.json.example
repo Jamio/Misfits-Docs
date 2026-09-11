@@ -7,6 +7,7 @@
   "durationSeconds": 7200,
   "result": "Success",
   "summary": "Optional short description of the operation.",
+  "image": "assets/operations/2023-08-19-vietnam-pmc-13.jpg",
   "recordQuality": "partial",
   "authors": [
     {

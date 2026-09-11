@@ -113,7 +113,7 @@ function renderPlayer(data, registry) {
 
 function serviceRow(label, value) { return `<div><dt>${label}</dt><dd>${value}</dd></div>`; }
 
-function renderOperation(data, registry) {
+function renderOperation(data, registry, imageRegistry) {
   const id = new URLSearchParams(window.location.search).get("id");
   const operation = data.operations.find(entry => entry.id === id);
   if (!operation) { byId("operation-detail").innerHTML='<div class="empty">Operation record not found.</div>'; byId("archive-status").textContent="Unknown record"; return; }
@@ -121,14 +121,18 @@ function renderOperation(data, registry) {
   byId("archive-status").textContent = operation.demo ? "Demonstration record" : "Archived operation";
   const authors = (operation.authors || []).map(author => `<a href="player.html?id=${encodeURIComponent(author.id)}">${escapeHTML(displayName(author,registry))}</a>${author.role === "primary" ? ' <span class="muted">(primary)</span>' : ''}`).join(", ");
   const provenance = operation.manual ? `<p class="notice">Historical ${escapeHTML(operation.recordQuality || "partial")} record. Unlisted statistics were not recorded.</p>` : operation.demo ? '<p class="notice">Synthetic demonstration data used to review the Operations Hub layout.</p>' : '';
+  const image = imageRegistry.images?.[operation.id] || operation.image || "assets/operations/placeholder.svg";
   const recordedKills = operation.players.filter(player => player.kills !== undefined && player.kills !== null).map(player => Number(player.kills));
-  byId("operation-detail").innerHTML = `<section class="page-head"><div><div class="eyebrow">${escapeHTML(operation.campaign)} · ${escapeHTML(operation.date)}</div><h1>${escapeHTML(operation.name)}</h1>${authors ? `<p class="operation-authors">Created by ${authors}</p>` : ''}</div><div class="operation-result">${escapeHTML(operation.result)}</div></section>${provenance}<section class="stats-strip">${stat(formatDuration(operation.durationSeconds),"Duration")}${stat(operation.players.length,"Attendance")}${stat(escapeHTML(operation.terrain),"Terrain")}${stat(recordedKills.length ? formatValue(recordedKills.reduce((sum,value)=>sum+value,0)) : "—","Recorded kills")}</section>${operation.summary?`<p class="lede">${escapeHTML(operation.summary)}</p>`:''}<h2>Attendance</h2><div class="table-wrap"><table><thead><tr><th>Player</th><th>Role</th><th>Group</th><th>Time</th><th>Kills</th><th>Deaths</th></tr></thead><tbody>${operation.players.map(player=>`<tr><td><a class="player-link" href="player.html?id=${encodeURIComponent(player.id)}">${escapeHTML(displayName(player,registry))}</a></td><td>${escapeHTML(player.role||"—")}</td><td>${escapeHTML(player.group||"—")}</td><td>${player.playtimeSeconds === undefined ? "—" : formatDuration(player.playtimeSeconds)}</td><td>${formatRecorded(player.kills)}</td><td>${formatRecorded(player.deaths)}</td></tr>`).join("")}</tbody></table></div>`;
+  byId("operation-detail").innerHTML = `<section class="page-head"><div><div class="eyebrow">${escapeHTML(operation.campaign)} · ${escapeHTML(operation.date)}</div><h1>${escapeHTML(operation.name)}</h1>${authors ? `<p class="operation-authors">Created by ${authors}</p>` : ''}</div><div class="operation-result">${escapeHTML(operation.result)}</div></section>${provenance}<figure class="operation-hero"><img id="operation-image" src="${escapeHTML(image)}" alt="Operation image for ${escapeHTML(operation.name)}"></figure><section class="stats-strip">${stat(formatDuration(operation.durationSeconds),"Duration")}${stat(operation.players.length,"Attendance")}${stat(escapeHTML(operation.terrain),"Terrain")}${stat(recordedKills.length ? formatValue(recordedKills.reduce((sum,value)=>sum+value,0)) : "—","Recorded kills")}</section>${operation.summary?`<p class="lede">${escapeHTML(operation.summary)}</p>`:''}<h2>Attendance</h2><div class="table-wrap"><table><thead><tr><th>Player</th><th>Role</th><th>Group</th><th>Time</th><th>Kills</th><th>Deaths</th></tr></thead><tbody>${operation.players.map(player=>`<tr><td><a class="player-link" href="player.html?id=${encodeURIComponent(player.id)}">${escapeHTML(displayName(player,registry))}</a></td><td>${escapeHTML(player.role||"—")}</td><td>${escapeHTML(player.group||"—")}</td><td>${player.playtimeSeconds === undefined ? "—" : formatDuration(player.playtimeSeconds)}</td><td>${formatRecorded(player.kills)}</td><td>${formatRecorded(player.deaths)}</td></tr>`).join("")}</tbody></table></div>`;
+  byId("operation-image").addEventListener("error", event => {
+    event.currentTarget.src = "assets/operations/placeholder.svg";
+  }, { once:true });
 }
 
-Promise.all([loadJSON("data/operations.json",{operations:[]}),loadJSON("data/personnel.json",{people:{}})]).then(([data,registry]) => {
+Promise.all([loadJSON("data/operations.json",{operations:[]}),loadJSON("data/personnel.json",{people:{}}),loadJSON("data/operation-images.json",{images:{}})]).then(([data,registry,imageRegistry]) => {
   if (document.body.dataset.page === "players") return renderPlayers(data,registry);
   if (document.body.dataset.page === "player") return renderPlayer(data,registry);
-  if (document.body.dataset.page === "operation") return renderOperation(data,registry);
+  if (document.body.dataset.page === "operation") return renderOperation(data,registry,imageRegistry);
   return renderOperations(data);
 }).catch(error => {
   byId("archive-status").textContent="Archive unavailable";
