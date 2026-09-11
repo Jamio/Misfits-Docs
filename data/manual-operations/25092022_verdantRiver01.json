@@ -1,0 +1,48 @@
+{
+  "id": "25092022_VerdantRiver",
+  "name": "Operation Verdant River",
+  "date": "2022-09-25",
+  "campaign": "Misfits Modern 2022",
+  "terrain": "Al Salman, Iraq",
+  "durationSeconds": 10800,
+  "result": "Success",
+  "summary": "Western coalition forces provided security for peace talks between newly-formed democratic government officials and separatist leaders.",
+  "recordQuality": "partial",
+  "authors": [
+    {
+      "steamId": "76561198026778430",
+      "role": "primary"
+    }
+  ],
+  "players": [
+    {
+      "steamId": "76561198032793508",
+      "role": "Squad Leader",
+    },
+    {
+      "steamId": "76561198153308918",
+      "role": "Squad Leader",
+    },
+    {
+      "steamId": "76561198017255554",
+      "role": "Medic"
+    },
+    {
+      "steamId": "76561197975184782",
+      "role": "Rifleman"
+    },
+    {
+      "steamId": "76561198063998972",
+      "role": "Rifleman"
+    },
+    {
+      "steamId": "76561198001212351",
+      "role": "Engineer"
+    },
+    {
+      "steamId": "76561198033876681",
+      "role": "Machinegunner"
+    }
+
+  ]
+}
