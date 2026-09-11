@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-11T13:20:27.5121405Z",
+  "generatedAt": "2026-09-11T14:16:33.5531827Z",
   "operations": [
     {
       "durationSeconds": 5400,
@@ -67,6 +67,63 @@
       "name": "Operation Blue Test",
       "terrain": "Altis",
       "result": "Partial success"
+    },
+    {
+      "id": "25092022_VerdantRiver",
+      "name": "Operation Verdant River",
+      "campaign": "Misfits Modern 2022",
+      "terrain": "Al Salman, Iraq",
+      "date": "2022-09-25",
+      "durationSeconds": 10800.0,
+      "result": "Success",
+      "summary": "Western coalition forces provided security for peace talks between newly-formed democratic government officials and separatist leaders.",
+      "authors": [
+        {
+          "id": "mf-831db6eaf5e5f0057c32",
+          "name": "Jamio",
+          "role": "primary"
+        }
+      ],
+      "players": [
+        {
+          "id": "mf-de645583928b2aa3bd47",
+          "name": "Kezz",
+          "role": "Squad Leader"
+        },
+        {
+          "id": "mf-4b2f5ae7a30c62f82b38",
+          "name": "Wolfie",
+          "role": "Squad Leader"
+        },
+        {
+          "id": "mf-60004acf03efe89697f6",
+          "name": "Hank",
+          "role": "Medic"
+        },
+        {
+          "id": "mf-bb2251e5446d0147a314",
+          "name": "Stormpie",
+          "role": "Rifleman"
+        },
+        {
+          "id": "mf-73838a4c7382999a2d7e",
+          "name": "Highlander",
+          "role": "Rifleman"
+        },
+        {
+          "id": "mf-641a51ea8a362eb64a57",
+          "name": "Lister",
+          "role": "Engineer"
+        },
+        {
+          "id": "mf-672c6be3f818639cf797",
+          "name": "76561198033876681",
+          "role": "Machinegunner"
+        }
+      ],
+      "manual": true,
+      "recordQuality": "partial",
+      "sourceFile": "25092022_verdantRiver01.json"
     }
   ]
 }
