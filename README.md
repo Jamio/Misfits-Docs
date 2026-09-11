@@ -25,6 +25,9 @@ assets.
 - `operations.html`: operation archive rendered from sanitised records.
 - `players.html`: lifetime attendance and statistics aggregated in the browser.
 - `data/operations.json`: optional versioned input for both archive pages.
+- `data/exported-operations/`: copy-ready records taken from the Misfits Aux
+  dedicated-server RPT; GitHub Actions validates and folds these into the
+  generated archive automatically.
 
 The operations layer is plain static HTML, CSS, JavaScript, and JSON. It has no
 database, analytics, cookies, login provider, or paid runtime dependency. Raw

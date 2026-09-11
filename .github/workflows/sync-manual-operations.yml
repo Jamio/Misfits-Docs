@@ -1,10 +1,11 @@
-name: Sync historical operations
+name: Sync operation records
 
 on:
   push:
     branches: [main]
     paths:
       - data/manual-operations/**
+      - data/exported-operations/**
       - tools/build-manual-operations.ps1
       - .github/workflows/sync-manual-operations.yml
   workflow_dispatch:
@@ -23,7 +24,7 @@ jobs:
       - name: Check out handbook
         uses: actions/checkout@v4
 
-      - name: Build historical operation records
+      - name: Build operation records
         shell: pwsh
         run: ./tools/build-manual-operations.ps1
 
@@ -36,6 +37,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "Operation archive is already current."
           else
-            git commit -m "Sync historical operations"
+            git commit -m "Sync operation records"
             git push
           fi

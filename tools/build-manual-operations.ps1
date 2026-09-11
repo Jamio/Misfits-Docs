@@ -3,6 +3,7 @@ Set-StrictMode -Version Latest
 
 $root = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..'))
 $sourceDirectory = Join-Path $root 'data\manual-operations'
+$exportDirectory = Join-Path $root 'data\exported-operations'
 $registryPath = Join-Path $root 'data\personnel-registry.json'
 $archivePath = Join-Path $root 'data\operations.json'
 
@@ -36,19 +37,38 @@ function Get-RequiredProperty($Object, [string]$Name, [string]$Context) {
 }
 
 try {
-    $manualOperations = @()
-    $manualIds = @{}
-    foreach ($file in @(Get-ChildItem -LiteralPath $sourceDirectory -Filter '*.json' -File | Sort-Object Name)) {
-        $context = "Manual operation '$($file.Name)'"
+    $sourceOperations = @()
+    $sourceIds = @{}
+    $inputFiles = @(
+        @(Get-ChildItem -LiteralPath $sourceDirectory -Filter '*.json' -File | ForEach-Object { [pscustomobject]@{ File = $_; Manual = $true } })
+        @(Get-ChildItem -LiteralPath $exportDirectory -Filter '*.json' -File | ForEach-Object { [pscustomobject]@{ File = $_; Manual = $false } })
+    ) | Sort-Object { $_.File.Name }
+    foreach ($input in $inputFiles) {
+        $file = $input.File
+        $isManual = $input.Manual
+        $context = "$(if ($isManual) {'Manual'} else {'Exported'}) operation '$($file.Name)'"
         try { $source = Get-Content -Raw -LiteralPath $file.FullName | ConvertFrom-Json }
         catch { throw "$context is not valid JSON: $($_.Exception.Message)" }
+
+        if (-not $isManual) {
+            if ($source.schemaVersion -ne 1 -or $source.source -ne 'maux_operations_export' -or $null -eq $source.operation) {
+                throw "$context is not a supported Misfits operation export."
+            }
+            $source = $source.operation
+            foreach ($author in @($source.authors)) {
+                if ($null -eq $author.PSObject.Properties['steamId']) { $author | Add-Member -NotePropertyName steamId -NotePropertyValue ([string]$author.id) }
+            }
+            foreach ($player in @($source.players)) {
+                if ($null -eq $player.PSObject.Properties['steamId']) { $player | Add-Member -NotePropertyName steamId -NotePropertyValue ([string]$player.id) }
+            }
+        }
 
         foreach ($field in @('id','name','date','campaign','terrain','result','players')) {
             [void](Get-RequiredProperty $source $field $context)
         }
         $operationId = [string]$source.id
-        if ($manualIds.ContainsKey($operationId)) { throw "Duplicate manual operation id '$operationId'." }
-        $manualIds[$operationId] = $true
+        if ($sourceIds.ContainsKey($operationId)) { throw "Duplicate source operation id '$operationId'." }
+        $sourceIds[$operationId] = $true
         if ([string]$source.date -notmatch '^\d{4}-\d{2}-\d{2}$') { throw "$context date must use YYYY-MM-DD." }
         $durationProperty = $source.PSObject.Properties['durationSeconds']
         if ($null -ne $durationProperty -and $null -ne $durationProperty.Value -and [double]$durationProperty.Value -lt 0) { throw "$context durationSeconds cannot be negative." }
@@ -103,25 +123,27 @@ try {
             summary = if ($null -eq $summaryProperty) { '' } else { [string]$summaryProperty.Value }
             authors = $authors
             players = $players
-            manual = $true
+            manual = $isManual
             recordQuality = $quality
             sourceFile = $file.Name
         }
         if ($image) { $outputOperation['image'] = $image }
-        $manualOperations += [pscustomobject]$outputOperation
+        $sourceOperations += [pscustomobject]$outputOperation
     }
 
+    $exportedIds = @{}
+    foreach ($operation in @($sourceOperations | Where-Object { $_.manual -ne $true })) { $exportedIds[[string]$operation.id] = $true }
     $automaticOperations = @($archive.operations | Where-Object {
         $manualProperty = $_.PSObject.Properties['manual']
-        $null -eq $manualProperty -or $manualProperty.Value -ne $true
+        ($null -eq $manualProperty -or $manualProperty.Value -ne $true) -and -not $exportedIds.ContainsKey([string]$_.id)
     })
     $automaticIds = @{}
     foreach ($operation in $automaticOperations) { $automaticIds[[string]$operation.id] = $true }
-    foreach ($operation in $manualOperations) {
+    foreach ($operation in @($sourceOperations | Where-Object { $_.manual -eq $true })) {
         if ($automaticIds.ContainsKey([string]$operation.id)) { throw "Manual operation id '$($operation.id)' already belongs to an exported operation." }
     }
 
-    $archive.operations = @($automaticOperations) + @($manualOperations)
+    $archive.operations = @($automaticOperations) + @($sourceOperations)
     # Keep the archive timestamp stable for manual-only rebuilds. Updating it on
     # every run creates a bot commit even when no operation data changed, which
     # cancels the Pages deployment that triggered this workflow.
@@ -130,7 +152,7 @@ try {
         if ($json.Contains([string]$person.steamId)) { throw 'A registered Steam UID remains in generated operation data.' }
     }
     [IO.File]::WriteAllText($archivePath, $json + [Environment]::NewLine, [Text.UTF8Encoding]::new($false))
-    Write-Host "Built $($manualOperations.Count) manual operation record(s)." -ForegroundColor Green
+    Write-Host "Built $($sourceOperations.Count) source operation record(s)." -ForegroundColor Green
 } finally {
     $hmac.Dispose()
     [Array]::Clear($namespaceKey, 0, $namespaceKey.Length)
