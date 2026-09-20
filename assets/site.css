@@ -172,11 +172,12 @@ footer { padding:1.5rem 0 3rem; border-top:1px solid var(--line); color:var(--mu
 .framework-system-heading { display:flex; align-items:center; gap:1rem; padding:1.15rem 1.3rem; border-bottom:1px solid var(--line); background:linear-gradient(100deg,var(--accent-dark),#101116 70%); }
 .framework-system-heading > span { color:var(--accent); font-size:1.35rem; font-weight:950; letter-spacing:.08em; }.framework-system-heading h2 { margin:.15rem 0 0; font-size:clamp(1.5rem,3vw,2.15rem); }
 .system-summary { margin:0; padding:1.25rem 1.3rem; color:var(--white); font-size:1.05rem; }
+.system-visual { display:grid; grid-template-columns:minmax(15rem,.8fr) minmax(24rem,1.4fr); align-items:stretch; border-bottom:1px solid var(--line); }.system-visual .system-summary { display:flex; align-items:center; }.system-visual img { display:block; width:100%; height:100%; min-height:220px; max-height:310px; object-fit:cover; }
 .system-details { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); border-top:1px solid var(--line); }.system-details > div { padding:1.2rem 1.3rem; }.system-details > div + div { border-left:1px solid var(--line); }.system-details h3,.system-options h3,.special-system-list h3 { margin:0 0 .4rem; }.system-details p,.system-options p,.special-system-list p { margin:0; color:var(--muted); }
 .system-options { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1px; border-top:1px solid var(--line); background:var(--line); }.system-options article { padding:1.1rem 1.3rem; background:var(--panel); }
 .system-action { margin:0; padding:1rem 1.3rem; border-top:1px solid var(--line); color:var(--accent-text); background:var(--accent-dark); }
 .special-system-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1px; border-top:1px solid var(--line); background:var(--line); }.special-system-list article { padding:1.15rem 1.3rem; background:var(--panel); }
-@media (max-width:800px) { .system-details,.system-options,.special-system-list { grid-template-columns:1fr; }.system-details > div + div { border-top:1px solid var(--line); border-left:0; } }
+@media (max-width:800px) { .system-details,.system-options,.special-system-list,.system-visual { grid-template-columns:1fr; }.system-details > div + div { border-top:1px solid var(--line); border-left:0; }.system-visual img { min-height:180px; max-height:260px; } }
 .novelty-items,.medical-panel > details { margin:.7rem 0; border:1px solid var(--line); background:var(--panel); }
 .novelty-items summary,.medical-panel > details summary { padding:1rem; color:var(--white); font-weight:850; cursor:pointer; }
 .medical-panel > details p { margin:0; padding:0 1rem 1rem; color:var(--muted); }.novelty-items .equipment-list { padding:0 1rem 1rem; }
