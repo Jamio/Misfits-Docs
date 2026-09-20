@@ -121,7 +121,11 @@ footer { padding:1.5rem 0 3rem; border-top:1px solid var(--line); color:var(--mu
 @media (max-width:800px) { .page-head { align-items:flex-start; flex-direction:column; } .stats-strip { grid-template-columns:repeat(2,1fr); } .operation { grid-template-columns:1fr; gap:.35rem; } .controls,.controls.personnel-controls,.figure-grid,.feature-section,.feature-details,.operation-guide-grid,.service-grid { grid-template-columns:1fr; } .feature-section { gap:.9rem; } .onboarding-flow article { padding-left:4.25rem; } }
 
 /* Medical guide */
-.medical-hero { padding-bottom:1.25rem; }
+.medical-hero { padding-bottom:.65rem; }
+.medical-hero > p:not(.lede) { max-width:860px; color:var(--muted); }
+.medical-browse { margin-top:1.15rem; padding:.9rem 1rem; border-left:4px solid var(--accent); color:var(--accent-text)!important; background:var(--accent-dark); }
+.medical-banner { margin-top:.75rem; margin-bottom:1.25rem; }
+.medical-banner img { max-height:260px; }
 .medical-tabs { position:sticky; top:0; z-index:20; display:flex; gap:.4rem; margin:0 0 2.5rem; padding:.65rem; overflow-x:auto; border:1px solid var(--line); border-left:4px solid var(--accent); background:rgba(8,9,12,.96); box-shadow:0 12px 28px rgba(0,0,0,.35); scrollbar-width:thin; }
 .medical-tabs button { flex:0 0 auto; padding:.7rem .85rem; border:1px solid transparent; border-radius:2px; color:var(--muted); background:transparent; font:inherit; font-size:.76rem; font-weight:900; letter-spacing:.06em; text-transform:uppercase; cursor:pointer; }
 .medical-tabs button:hover { color:var(--white); border-color:var(--line); }
@@ -150,8 +154,15 @@ footer { padding:1.5rem 0 3rem; border-top:1px solid var(--line); color:var(--mu
 .airway-options,.equipment-list { display:grid; gap:.7rem; margin:1.25rem 0; }
 .airway-options article,.equipment-list article { display:grid; grid-template-columns:3.3rem 1fr; gap:1rem; align-items:center; padding:1rem; border:1px solid var(--line); background:var(--panel); }
 .airway-options h3,.equipment-list h3 { margin:0 0 .25rem; }.airway-options p,.equipment-list p { margin:0; color:var(--muted); }
-.item-icon,.item-symbol { width:3.3rem; height:3.3rem; border:1px solid var(--accent-border); border-radius:4px; background:#08090b; object-fit:contain; }
+.item-icon,.item-symbol { display:block; width:2.25rem; min-width:2.25rem; max-width:2.25rem; height:2.25rem; min-height:2.25rem; max-height:2.25rem; padding:.12rem; border:1px solid var(--accent-border); border-radius:4px; background:#08090b; object-fit:contain; }
 .item-symbol { display:flex; align-items:center; justify-content:center; color:var(--accent-text); font-size:.82rem; font-weight:950; }
+.airway-options article,.equipment-list article { grid-template-columns:2.25rem 1fr; }
+.medic-card-player { border-top:3px solid #3f8fd4; background:linear-gradient(150deg,rgba(27,69,107,.35),var(--panel) 65%); }
+.medic-card-medic { border-top:3px solid var(--accent); background:linear-gradient(150deg,var(--accent-dark),var(--panel) 65%); }
+.state-clear { color:#fff; }.state-warning { color:#f1c84b; }.state-danger { color:#ff6868; }
+.medical-figure-pair { margin:1rem 0 1.5rem; }
+.medical-figure-pair .guide-figure { margin:0; }
+.medical-splint-figure { max-width:720px; margin:1.4rem auto; }
 .novelty-items,.medical-panel > details { margin:.7rem 0; border:1px solid var(--line); background:var(--panel); }
 .novelty-items summary,.medical-panel > details summary { padding:1rem; color:var(--white); font-weight:850; cursor:pointer; }
 .medical-panel > details p { margin:0; padding:0 1rem 1rem; color:var(--muted); }.novelty-items .equipment-list { padding:0 1rem 1rem; }
