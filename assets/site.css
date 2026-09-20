@@ -142,9 +142,9 @@ footer { padding:1.5rem 0 3rem; border-top:1px solid var(--line); color:var(--mu
 .quick-loop { display:flex; justify-content:space-between; gap:1rem; margin:1.4rem 0; padding:1rem 1.2rem; border-left:4px solid var(--accent); background:var(--accent-dark); }
 .quick-loop span { color:var(--accent-text); text-align:right; }
 .blood-scale { display:grid; grid-template-columns:repeat(5,minmax(7rem,1fr)); margin:1rem 0; overflow:hidden; border:1px solid var(--line); }
-.blood-scale span { min-height:5rem; padding:.9rem .65rem; color:#f2d7d7; background:#542027; }
-.blood-scale span:nth-child(2) { background:#6d282d; }.blood-scale span:nth-child(3) { background:#7a312d; }.blood-scale span:nth-child(4) { background:#702122; }
-.blood-scale .blood-ok { color:#ddf3e6; background:#17452d; }.blood-scale .blood-critical { color:#fff; background:#390b11; }
+.blood-scale span { min-height:5rem; padding:.9rem .65rem; color:#171208; background:#ffff00; }
+.blood-scale span:nth-child(2) { background:#ffff00; }.blood-scale span:nth-child(3) { background:#ffaa00; }.blood-scale span:nth-child(4) { color:#fff; background:#ff5400; }
+.blood-scale .blood-ok { color:#ddf3e6; background:#17452d; }.blood-scale .blood-critical { color:#fff; background:#c40000; }
 .blood-scale strong { display:block; margin-bottom:.25rem; color:inherit; font-size:1.15rem; }
 .bandage-table th,.bandage-table td { vertical-align:middle; }.bandage-table tbody th { color:var(--white); text-align:left; }.bandage-table td:nth-child(2),.bandage-table td:nth-child(3) { width:10rem; text-align:center; }
 .rating { display:inline-flex; align-items:center; justify-content:center; min-width:3rem; padding:.18rem .45rem; border:1px solid currentColor; border-radius:2px; font-size:1.05rem; font-weight:950; letter-spacing:.08em; }
@@ -160,6 +160,7 @@ footer { padding:1.5rem 0 3rem; border-top:1px solid var(--line); color:var(--mu
 .item-icon-set img.item-icon { display:block; flex:0 0 2.25rem; width:2.25rem!important; min-width:2.25rem; max-width:2.25rem; height:2.25rem!important; min-height:2.25rem; max-height:2.25rem; padding:.12rem; border:1px solid var(--accent-border); border-radius:4px; background:#08090b; object-fit:contain; }
 .item-icon-set img + img { margin-left:-.45rem; }
 .equipment-list article.equipment-item-grouped { grid-template-columns:auto 1fr; }
+.menu-tab-icon { border-color:#555b64; background:#202329; }
 .airway-options article,.equipment-list article { grid-template-columns:2.25rem 1fr; }
 .medic-card-player { border-top:3px solid #3f8fd4; background:linear-gradient(150deg,rgba(27,69,107,.35),var(--panel) 65%); }
 .medic-card-medic { border-top:3px solid var(--accent); background:linear-gradient(150deg,var(--accent-dark),var(--panel) 65%); }
