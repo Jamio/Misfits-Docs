@@ -144,7 +144,12 @@
       "name": "Xphinato",
       "status": "active",
       "managed": true
+    },
+    "mf-672c6be3f818639cf797": {
+      "name": "Ryth",
+      "status": "inactive",
+      "managed": true
     }
   },
-  "generatedAt": "2026-09-25T22:20:42.7949073Z"
+  "generatedAt": "2026-09-25T22:29:51.2041107Z"
 }
