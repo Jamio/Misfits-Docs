@@ -1,4 +1,8 @@
 {
   "schemaVersion": 1,
-  "images": {}
+  "images": {
+
+  "2026-09-25-black-cats": "assets/operations/blackcats.jpg"
+    
+  }
 }
