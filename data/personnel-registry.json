@@ -104,8 +104,12 @@
 
               {"steamId": "76561197970014814",
               "name": "Dave",
-              "status": "inactive"}
+              "status": "inactive"},
 
+    
+              {"steamId": "76561198067625067",
+              "name": "Xphinato",
+              "status": "active"}
     
 
     
