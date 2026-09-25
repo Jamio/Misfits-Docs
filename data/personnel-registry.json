@@ -109,9 +109,11 @@
     
               {"steamId": "76561198067625067",
               "name": "Xphinato",
-              "status": "active"}
+              "status": "active"},
     
-
+              {"steamId": "76561198033876681",
+              "name": "Ryth",
+              "status": "inactive"}
     
 
               
