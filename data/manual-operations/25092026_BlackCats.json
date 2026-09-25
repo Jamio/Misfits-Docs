@@ -8,7 +8,12 @@
   "result": "Success",
   "summary": "The Misfits successfully completed their mission by finding the crucial intel!",
   "recordQuality": "partial",
-  "authors": [],
+  "authors": [
+  {
+    "steamId": "76561198015405206",
+    "role": "primary"
+  }
+],
   "players": [
     {
       "steamId": "76561198153308918",
@@ -30,29 +35,6 @@
       "treatments": 57,
       "damageReceived": 316.579,
       "distanceFoot": 11547.2,
-      "distanceVehicle": 0,
-      "vehicleTime": 0
-    },
-    {
-      "steamId": "76561198015405206",
-      "role": "HQ",
-      "group": "HQ",
-      "playtimeSeconds": 12422,
-      "kills": 0,
-      "infantryKills": 0,
-      "vehicleKills": 0,
-      "friendlyKills": 0,
-      "longestKill": 0,
-      "shots": 0,
-      "launcherShots": 0,
-      "grenades": 0,
-      "explosives": 0,
-      "deaths": 0,
-      "respawns": 0,
-      "unconscious": 0,
-      "treatments": 0,
-      "damageReceived": 0,
-      "distanceFoot": 0,
       "distanceVehicle": 0,
       "vehicleTime": 0
     },
