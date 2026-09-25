@@ -134,7 +134,13 @@
       "durationSeconds": 12423.0,
       "result": "Success",
       "summary": "The Misfits successfully completed their mission by finding the crucial intel!",
-      "authors": [],
+      "authors": [
+        {
+          "id": "mf-ec41ac84cd60294e8f0c",
+          "name": "Azu",
+          "role": "primary"
+        }
+      ],
       "players": [
         {
           "id": "mf-4b2f5ae7a30c62f82b38",
@@ -157,30 +163,6 @@
           "treatments": 57,
           "damageReceived": 316.579,
           "distanceFoot": 11547.2,
-          "distanceVehicle": 0,
-          "vehicleTime": 0
-        },
-        {
-          "id": "mf-ec41ac84cd60294e8f0c",
-          "name": "Azu",
-          "role": "HQ",
-          "group": "HQ",
-          "playtimeSeconds": 12422,
-          "kills": 0,
-          "infantryKills": 0,
-          "vehicleKills": 0,
-          "friendlyKills": 0,
-          "longestKill": 0,
-          "shots": 0,
-          "launcherShots": 0,
-          "grenades": 0,
-          "explosives": 0,
-          "deaths": 0,
-          "respawns": 0,
-          "unconscious": 0,
-          "treatments": 0,
-          "damageReceived": 0,
-          "distanceFoot": 0,
           "distanceVehicle": 0,
           "vehicleTime": 0
         },
@@ -210,7 +192,7 @@
         },
         {
           "id": "mf-2ccbe70e80657fc6cf58",
-          "name": "76561198067625067",
+          "name": "Xphinato",
           "role": "Engineer",
           "group": "Able",
           "playtimeSeconds": 12422,
