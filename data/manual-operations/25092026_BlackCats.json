@@ -17,7 +17,7 @@
   "players": [
     {
       "steamId": "76561198153308918",
-      "role": "AutoRifleman",
+      "role": "Autorifleman",
       "group": "Able",
       "playtimeSeconds": 12417,
       "kills": 8,
@@ -86,7 +86,7 @@
     },
     {
       "steamId": "76561198026778430",
-      "role": "Platoon Leader@Alcatraz",
+      "role": "Platoon Leader",
       "group": "Able",
       "playtimeSeconds": 12422,
       "kills": 45,
