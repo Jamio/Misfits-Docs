@@ -246,7 +246,7 @@
     {
       "recordQuality": "full",
       "name": "05_Husky",
-      "campaign": "testing",
+      "campaign": "WW2 2026",
       "terrain": "Altis",
       "date": "2026-10-16",
       "players": [
@@ -537,30 +537,6 @@
           "kills": 73,
           "deaths": 2,
           "infantryKills": 71
-        },
-        {
-          "friendlyKills": 0,
-          "launcherShots": 0,
-          "distanceFoot": 0,
-          "distanceVehicle": 0,
-          "name": "Jamio",
-          "damageReceived": 0,
-          "group": "Bravo 1-4",
-          "unconscious": 0,
-          "treatments": 0,
-          "vehicleTime": 0,
-          "id": "mf-831db6eaf5e5f0057c32",
-          "playtimeSeconds": 15568,
-          "longestKill": 0,
-          "explosives": 0,
-          "respawns": 0,
-          "vehicleKills": 0,
-          "grenades": 0,
-          "role": "Zeus@Zeus",
-          "kills": 0,
-          "shots": 0,
-          "deaths": 0,
-          "infantryKills": 0
         },
         {
           "distanceFoot": 17129.1,
