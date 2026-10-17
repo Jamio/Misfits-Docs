@@ -1,8 +1,7 @@
 {
   "schemaVersion": 1,
   "images": {
-
-  "2026-09-25-black-cats": "assets/operations/blackcats.jpg"
-    
+    "2026-09-25-black-cats": "assets/operations/blackcats.jpg",
+    "05_Husky-20261016181735467": "assets/operations/operation-husky.png"
   }
 }
